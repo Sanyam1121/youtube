@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </div>
+    </div>
+    
+    <div class="header-center">
+      <div class="search-container">
+        <input type="text" placeholder="Search" class="search-input" id="searchInput">
+        <button class="search-btn" id="searchBtn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <button class="mic-btn">
+        <i class="fas fa-microphone"></i>
+      </button>
+    </div>
+    
+    <div class="header-right">
+      <button class="header-btn">
+        <i class="fas fa-video"></i>
+      </button>
+      <button class="header-btn">
+        <i class="fas fa-th"></i>
+      </button>
+      <button class="header-btn">
+        <i class="fas fa-bell"></i>
+      </button>
+      <div class="profile-pic">
+        <i class="fas fa-user-circle"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-item active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        <div class="sidebar-item">
+          <i class="fas fa-compass"></i>
+          <span>Explore</span>
+        </div>
+        <div class="sidebar-item">
+          <i class="fas fa-play-circle"></i>
+          <span>Subscriptions</span>
+        </div>
+      </div>
+      
+      <hr class="sidebar-divider">
+      
+      <div class="sidebar-section">
+        <div class="sidebar-item">
+          <i class="fas fa-video"></i>
+          <span>Library</span>
+        </div>
+        <div class="sidebar-item">
+          <i class="fas fa-history"></i>
+          <span>History</span>
+        </div>
+        <div class="sidebar-item">
+          <i class="fas fa-clock"></i>
+          <span>Watch Later</span>
+        </div>
+        <div class="sidebar-item">
+          <i class="fas fa-thumbs-up"></i>
+          <span>Liked Videos</span>
+        </div>
+      </div>
+      
+      <hr class="sidebar-divider">
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Subscriptions</h3>
+        <div class="sidebar-item">
+          <div class="channel-avatar">T</div>
+          <span>Tech Channel</span>
+        </div>
+        <div class="sidebar-item">
+          <div class="channel-avatar">M</div>
+          <span>Music Hub</span>
+        </div>
+        <div class="sidebar-item">
+          <div class="channel-avatar">G</div>
+          <span>Gaming Zone</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="content" id="content">
+      <!-- Category Pills -->
+      <div class="category-pills">
+        <button class="pill active" data-category="all">All</button>
+        <button class="pill" data-category="music">Music</button>
+        <button class="pill" data-category="gaming">Gaming</button>
+        <button class="pill" data-category="tech">Technology</button>
+        <button class="pill" data-category="sports">Sports</button>
+        <button class="pill" data-category="news">News</button>
+        <button class="pill" data-category="comedy">Comedy</button>
+        <button class="pill" data-category="education">Education</button>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="video-grid" id="videoGrid">
+        <!-- Videos will be populated by JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="video-player">
+        <video id="modalVideo" controls>
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-info">
+        <h2 id="modalTitle"></h2>
+        <div class="video-stats">
+          <span id="modalViews"></span>
+          <div class="video-actions">
+            <button class="action-btn">
+              <i class="fas fa-thumbs-up"></i>
+              <span id="modalLikes"></span>
+            </button>
+            <button class="action-btn">
+              <i class="fas fa-thumbs-down"></i>
+            </button>
+            <button class="action-btn">
+              <i class="fas fa-share"></i>
+              Share
+            </button>
+            <button class="action-btn">
+              <i class="fas fa-download"></i>
+              Download
+            </button>
+          </div>
+        </div>
+        <div class="channel-info">
+          <div class="channel-avatar" id="modalChannelAvatar"></div>
+          <div class="channel-details">
+            <h3 id="modalChannelName"></h3>
+            <p id="modalChannelSubs"></p>
+          </div>
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+        <div class="video-description">
+          <p id="modalDescription"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
